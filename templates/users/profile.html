@@ -1,0 +1,5 @@
+{% extends "base.html" %} {% block content %} {{profile.username}}
+{{profile.email}}
+<img src="{{profile.photo.url}}" alt="" />
+<a href="{% url 'account_change_password ' %}">Change Password</a>
+{% endblock %}

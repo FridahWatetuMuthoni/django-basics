@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<h1>Update Your Profile</h1>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %} {{ form|crispy }}
+  <!-- If using crispy forms -->
+  <button type="submit">Update Profile</button>
+</form>
+<a href="{% url 'profile' %}">Back to Profile</a>
+<!-- Link back to the profile page -->
+
+{% endblock %}

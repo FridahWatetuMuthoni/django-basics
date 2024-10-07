@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %} {% if tag %}
+<p>Posts tagged with <strong>"{{ tag.name }}"</strong></p>
+
+{% endif %} {% for post in posts %}
+<a href="{{post.get_absolute_url}}">{{ post.pk }} : {{ post }}</a>
+<h1>{{post.title}}</h1>
+<p>{{post.body}}</p>
+<img src="{post.image.url}" alt="" />
+
+<section>
+  {% if posts.has_previous %}
+  <a href="?page=1">1</a>
+  <a href="?page={{ posts.previous_page_number }}"
+    >{{posts.previous_page_number}}</a
+  >
+  {% endif %}
+  <span>{{ posts.number }}</span>
+  <span>of</span>
+  <span>{{ posts.paginator.num_pages }}</span>
+  {% if post.has_next %}
+  <a href="?page={{ posts.next_page_number }}">Next</a>
+  <a href="?page={{ posts.paginator.num_pages }}"
+    >{{ posts.paginator.num_pages }}</a
+  >
+  {% endif %}
+</section>
+{% endfor %} {% endblock %}
