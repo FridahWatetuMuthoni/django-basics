@@ -174,6 +174,8 @@ customColorPalette = [
 ]
 
 CKEDITOR_5_CUSTOM_CSS = 'css/dark_mode.css'
+CKEDITOR_5_UPLOAD_FILE_TYPES = ['jpeg', 'pdf', 'png', 'jpg']
+
 CKEDITOR_5_CONFIGS = {
     "default": {
         "toolbar": [

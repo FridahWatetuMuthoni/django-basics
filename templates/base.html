@@ -11,5 +11,6 @@
     {% include 'partials/navigation.html' %}
     <main class="mt-5">{% block content %} {% endblock %}</main>
   </body>
+  {% block javascript %} {% endblock %}
   <script src="{% static 'js/app.js' %}"></script>
 </html>

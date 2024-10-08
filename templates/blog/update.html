@@ -1,6 +1,8 @@
 {% extends "base.html" %} {% block content %}
-<form method="POST" enctype="multipart/form-data">
-  {% csrf_token %} {{form.as_p}}
-  <button class="button" type="submit">Update</button>
-</form>
+<section class="mt-16">
+  <form method="POST" enctype="multipart/form-data" class="prose">
+    {% csrf_token %} {{form.media}} {{form.as_p}}
+    <button class="button" type="submit">update</button>
+  </form>
+</section>
 {% endblock %}
